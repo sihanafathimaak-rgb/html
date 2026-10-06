@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Learning Profile</title>
+</head>
+<body>
+  <header>
+    <h1>Asha's Learning Profile</h1>
+  </header>
+  <main>
+    <section aria-labelledby="goal-heading">
+      <h2 id="goal-heading">My learning goal</h2>
+      <p>I want to build a useful website and understand the HTML that gives it structure.</p>
+    </section>
+
+    <section aria-labelledby="study-plan-heading">
+      <h2 id="study-plan-heading">My study plan</h2>
+      <ol>
+        <li>Practice HTML headings, paragraphs, lists, and links.</li>
+        <li>Build a small page with a form and clearly labeled fields.</li>
+        <li>Review the page in a browser and check its structure.</li>
+      </ol>
+      <p><a href="#practice-form">Go to the labeled practice form</a></p>
+    </section>
+
+    <form id="practice-form">
+      <p>
+        <label for="learner-name">Name</label><br>
+        <input id="learner-name" name="name" type="text" autocomplete="name" required>
+      </p>
+      <p>
+        <label for="learner-email">Email</label><br>
+        <input id="learner-email" name="email" type="email" autocomplete="email" required>
+      </p>
+      <button type="submit">Check practice form</button>
+    </form>
+    <p>This local practice form is a demonstration only. It does not save enrollment or send your information.</p>
+  </main>
+</body>
+</html>
