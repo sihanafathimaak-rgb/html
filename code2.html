@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Bridge Workshop | Registration Guide</title>
+</head>
+<body>
+  <header>
+    <h1>Paper Bridge Workshop</h1>
+    <p>Plan, build, and test paper bridges in this hands-on 45-minute workshop.</p>
+    <nav aria-label="Guide sections">
+      <ul>
+        <li><a href="#overview">Workshop overview</a></li>
+        <li><a href="#equipment">Equipment comparison</a></li>
+        <li><a href="#registration">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Workshop overview</h2>
+      <figure>
+        <img src="paper-bridge.svg" alt="A folded paper bridge spans two supports while a coin rests on top.">
+        <figcaption>A simple folded-paper bridge ready for a weight test.</figcaption>
+      </figure>
+
+      <section aria-labelledby="purpose-heading">
+        <h3 id="purpose-heading">Purpose</h3>
+        <p>Explore how folds and shapes affect how much weight a paper bridge can hold. You will make a prediction, test a design, improve it, and compare results.</p>
+      </section>
+
+      <section aria-labelledby="schedule-heading">
+        <h3 id="schedule-heading">Schedule</h3>
+        <ol>
+          <li>Welcome and make a prediction (5 minutes)</li>
+          <li>Plan and sketch a design (5 minutes)</li>
+          <li>Build a bridge (10 minutes)</li>
+          <li>Add weights and record results (15 minutes)</li>
+          <li>Improve the design and reflect (10 minutes)</li>
+        </ol>
+      </section>
+    </section>
+
+    <section id="equipment" aria-labelledby="equipment-heading">
+      <h2 id="equipment-heading">Equipment comparison</h2>
+      <p>Bring the basic supplies; optional tools can help you compare designs.</p>
+      <table>
+        <caption>Workshop equipment and its role</caption>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Use</th>
+            <th scope="col">Needed?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Printer paper</th>
+            <td>Forms the bridge; bring several sheets for redesigns.</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <th scope="row">Two matching books</th>
+            <td>Support the paper bridge with a gap between them.</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <th scope="row">Coins or small weights</th>
+            <td>Test and compare how much each design supports.</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <th scope="row">Ruler</th>
+            <td>Measure the gap or bridge span.</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <th scope="row">Pencil and paper</th>
+            <td>Sketch designs and record test results.</td>
+            <td>Recommended</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="registration" aria-labelledby="registration-heading">
+      <h2 id="registration-heading">Register for the workshop</h2>
+      <p>Complete the required fields. This local demonstration displays your entries in this page only; it does not send or save them.</p>
+      <p>Expected values: <code>name</code> and <code>email</code> contain your entered text; <code>experience</code> is one of <code>beginner</code>, <code>some-practice</code>, or <code>experienced</code>.</p>
+
+      <form id="registration-form">
+        <p>
+          <label for="participant-name">Name (required)</label><br>
+          <input id="participant-name" name="name" type="text" autocomplete="name" required>
+        </p>
+        <p>
+          <label for="participant-email">Email address (required)</label><br>
+          <input id="participant-email" name="email" type="email" autocomplete="email" required>
+        </p>
+        <p>
+          <label for="experience">Paper-bridge experience (required)</label><br>
+          <select id="experience" name="experience" required>
+            <option value="">Choose an experience level</option>
+            <option value="beginner">New to bridge building</option>
+            <option value="some-practice">I have tried it a little</option>
+            <option value="experienced">I have built bridges before</option>
+          </select>
+        </p>
+        <button type="submit">Show registration summary</button>
+      </form>
+      <p id="registration-result" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script>
+    const registrationForm = document.querySelector("#registration-form");
+    const registrationResult = document.querySelector("#registration-result");
+    const experienceLabels = {
+      beginner: "New to bridge building",
+      "some-practice": "I have tried it a little",
+      experienced: "I have built bridges before"
+    };
+
+    registrationForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(registrationForm);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const experience = formData.get("experience");
+
+      registrationResult.textContent =
+        `Registration details — Name: ${name}; Email: ${email}; Experience: ${experienceLabels[experience]}.`;
+    });
+  </script>
+</body>
+</html>
